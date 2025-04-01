@@ -1,0 +1,35 @@
+.blogPosts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 5rem 2rem 5rem 2rem;
+
+    .blogCard {
+        padding: 2rem;
+        border: 1px solid #4c4c4c;
+
+        img {
+            height: auto;
+            width: 100%;
+        }
+
+        h3 {
+            color: #F07232;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-weight: 400;
+            padding: 5rem 0 3rem 0;
+            max-width: 70%;
+        }
+
+        p {
+            font-size: 1.8rem;
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 5rem;
+            max-width: 95%;
+        }
+    }
+}

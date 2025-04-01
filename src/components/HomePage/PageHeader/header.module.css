@@ -1,0 +1,59 @@
+/* Mobile-first */
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    flex-direction: column;
+    background: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)),
+        url(/assets/studio.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+
+    .headerContent {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 3rem;
+
+
+        h3 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+    
+        h1 {
+            font-size: 4rem;
+            font-family: 'Cormant', serif;
+            font-weight: 300;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 0.2rem;
+        }
+
+        .produktion {
+            color: #F07232;
+        }
+
+        p {
+            margin-top: 2rem;
+            line-height: 1.6;
+            max-width: 70%;
+        }
+    }
+}
+
+
+/* Desktop */
+@media (min-width: 768px) {
+    
+}

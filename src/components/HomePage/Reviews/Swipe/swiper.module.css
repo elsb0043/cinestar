@@ -1,0 +1,36 @@
+.swiperSlide {
+    height: 30%;
+    width: 90%;
+    transition: transform 0.3s ease-in-out;
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+
+    .slideContent {
+        background-color: #99999933;
+        padding: 2rem;
+
+        .rating {
+            margin-bottom: 4rem;
+            color: #DCB036;
+        }
+
+        .reviewText {
+            line-height: 1.6;
+        }
+
+        .reviewerName {
+            color: #F07232;
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 300;
+            font-family: 'Cormant', serif;
+            margin-top: 4rem;
+        }
+    }
+}
+
+.swiper-slide-active {
+    transform: scale(1.2);
+    background: #222;
+}

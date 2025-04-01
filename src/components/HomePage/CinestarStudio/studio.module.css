@@ -1,0 +1,128 @@
+/* Mobile-first */
+.studioContainer {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 5rem 2rem 5rem 2rem;
+
+    .studioText {
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        h3 {
+            color: #F07232;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    
+        h2 {
+            font-size: 3rem;
+            font-family: 'Cormant', serif;
+            font-weight: 300;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            line-height: 1.4;
+            letter-spacing: 0.2rem;
+        }
+    
+        h4 {
+            line-height: 2;
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+    }
+
+    .studioFilm {
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 4rem;
+        gap: 3rem;
+
+        .videoWrapper {
+            position: relative;
+            height: 20rem;
+            width: auto;
+
+            .customPlayButton {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+                border: #F07232 7px solid;
+                border-radius: 50%;
+                width: 8rem;
+                height: 8rem;
+                cursor: pointer;
+                transition: transform 0.2s ease;
+
+                div {
+                    font-size: 3rem;
+                    color: #F07232;
+                    text-align: center;
+                    margin-left: 0.5rem;
+                }
+            }
+            
+            .customPlayButton:hover {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        .tøvIkke {
+            font-family: 'Cormant', serif;
+            font-weight: 300;
+            text-transform: uppercase;
+            line-height: 1.4;
+            max-width: 70%;
+            letter-spacing: 0.2rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 96%;
+        }
+
+        .studioFilmInfo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 3rem;
+            margin-bottom: 5rem;
+
+            .studioFilmInfoText {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                .plus {
+                    color: #F07232;
+                    font-size: 4rem;
+                }
+
+                .production {
+                    font-size: 1.8rem;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                }
+            }
+        }
+    } 
+}
+
+
+/* Desktop */
+@media (min-width: 768px) {
+    
+}

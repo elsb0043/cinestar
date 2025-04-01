@@ -1,0 +1,55 @@
+/* Mobile-first */
+.reviewsContainer {
+    position: relative;
+    background-color: #000; 
+
+    .reviewsContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 5rem 0 5rem 0;
+        position: relative;
+        z-index: 2;
+        
+        .reviewsContentText {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+    
+            h3 {
+                color: #F07232;
+                font-size: 1.8rem;
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+        
+            h2 {
+                font-size: 3rem;
+                font-family: 'Cormant', serif;
+                font-weight: 300;
+                text-transform: uppercase;
+                margin-bottom: 3rem;
+                line-height: 1.4;
+                text-align: center;
+                letter-spacing: 0.2rem;
+            }
+
+            p {
+                text-align: center;
+                line-height: 1.6;
+                font-size: 1.8rem;
+                max-width: 90%;
+            }
+        }
+    }
+}
+
+
+/* Desktop */
+@media (min-width: 768px) {
+    
+}

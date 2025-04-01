@@ -1,0 +1,40 @@
+/* Mobile-first */
+.backofficeNavigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #212121;
+  width: 100%;
+  
+  li {
+    list-style: none;
+    font-size: 1.5rem;
+  }
+
+  a {
+    padding: 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+  
+    &.active {
+      background-color: #5a5a5a;
+    }
+  }
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .backofficeNavigation {
+    padding: 3rem;
+    
+    li {
+      font-size: 1.8rem;
+    }
+  
+    a {
+      padding: 3rem;
+    }
+  }
+}

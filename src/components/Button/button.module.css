@@ -1,0 +1,86 @@
+/* Mobile-first */
+/* BUTTON 1 */
+.button {
+  width: 55vw;
+  padding: 1.5rem 0 1.5rem 0;
+  background-color: transparent;
+  color: #F07232;
+  border: #F07232 1px solid;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: #F07232;
+  color: #000;
+  transition: 0.4s ease-in-out;
+}
+
+/* BUTTON 2 */
+.grayButton {
+  padding: 1rem 5rem 1rem 5rem;
+  background-color: transparent;
+  color: #e5e7eb;
+  border: #e5e7eb 1px solid;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.grayButton:hover {
+  background-color: #e5e7eb;
+  color: #000;
+  transition: 0.4s ease-in-out;
+}
+
+.redButton {
+  padding: 1rem 3rem 1rem 3rem;
+  background-color: transparent;
+  color: rgb(174, 0, 0);
+  border: rgb(174, 0, 0) 1px solid;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 0.3rem;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.redButton:hover {
+  background-color: rgb(174, 0, 0);
+  color: #000;
+  transition: 0.4s ease-in-out;
+}
+
+.orangeButton {
+  padding: 1rem 3rem 1rem 3rem;
+  background-color: transparent;
+  color: #936641;
+  border: #936641 1px solid;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 0.3rem;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.orangeButton:hover {
+  background-color: #7d5737;
+  color: #000;
+  transition: 0.4s ease-in-out;
+}
+
+
+/* Desktop */
+@media (min-width: 768px) {
+  /* BUTTON 1 */
+  .button {
+    width: 30vw;
+  }
+}

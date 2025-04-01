@@ -1,0 +1,27 @@
+/* Mobile-first */
+.awards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .awardsContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5rem;
+        padding: 5rem;
+
+        img {
+            height: auto;
+            width: 30rem;
+        }
+    }
+}
+
+
+/* Desktop */
+@media (min-width: 768px) {
+    
+}

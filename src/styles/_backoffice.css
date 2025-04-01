@@ -1,0 +1,90 @@
+/* Mobile-first */
+.backoffice {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  h1 {
+    font-size: 2rem;
+    font-family: 'Cormant', serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    line-height: 1.4;
+    text-align: center;
+    letter-spacing: 0.2rem;
+    margin: 3rem;
+  }
+}
+
+.backofficeContent {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+  }
+
+  thead {
+    background-color: #212121;
+  }
+
+  th, td {
+    padding: 2rem;
+    border: 1px solid #4c4c4c;
+    display: flex;
+    flex-direction: column;
+  }
+
+  td {
+    max-width: 30rem;
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  img {
+    max-height: 30rem;
+    max-width: 30rem;
+    object-fit: cover;
+  }
+}
+
+
+/* Desktop */
+@media (min-width: 768px) {
+  .backoffice {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+  
+  .backofficeContent {
+    table {
+      display: table; 
+      flex-direction: initial; 
+    }
+
+    th, td {
+      display: table-cell; 
+      flex-direction: initial; 
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    img {
+      max-height: 15rem;
+      max-width: 15rem;
+    }
+  }
+}

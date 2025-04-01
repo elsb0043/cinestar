@@ -1,0 +1,38 @@
+/* Mobile-first */
+.singleViewContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 15rem 2rem 5rem 2rem;
+
+    .blogCard {
+
+        img {
+            height: auto;
+            width: 100%;
+        }
+
+        h3 {
+            color: #F07232;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-weight: 400;
+            padding-top: 5rem;
+            max-width: 70%;
+        }
+
+        .created {
+            font-size: 1.3rem;
+        }
+
+        p {
+            font-size: 1.8rem;
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 5rem;
+            max-width: 95%;
+        }
+    }
+}

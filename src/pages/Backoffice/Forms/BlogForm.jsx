@@ -5,7 +5,7 @@ import styles from "./form.module.css"
 import Button2 from "../../../components/Button/Button2"
 
 const BlogForm = ({ isEditMode }) => {
-    const [name, setName] = useState("")
+    const [title, setTitle] = useState("")
     const [teaser, setTeaser] = useState("")
     const [description, setDescription] = useState("")
     const [image, setImage] = useState(null)
@@ -24,7 +24,7 @@ const BlogForm = ({ isEditMode }) => {
         
                   if (response) {
                     // Forudfyld formularen med bloggen data
-                    setName(response.name)
+                    setTitle(response.title)
                     setTeaser(response.teaser)
                     setDescription(response.description)
                     setImage(response.image)
@@ -53,10 +53,9 @@ const BlogForm = ({ isEditMode }) => {
         event.preventDefault()
 
         const blogData = new FormData()
-        blogData.append("name", name)
+        blogData.append("title", title)
         blogData.append("teaser", teaser)
         blogData.append("description", description)
-        blogData.append("rating", rating)
 
         if (selectedFile) {
             blogData.append("file", selectedFile)
@@ -70,14 +69,10 @@ const BlogForm = ({ isEditMode }) => {
             } else {
                 response = await createBlog(blogData)
             }
-            console.log (
-                isEditMode ? "Blog er opdateret" : "Blog er oprettet", 
-                response
-            )
 
             if (response) {
                 await refetch()
-                navigate("/backoffice/blogs")
+                navigate("/backoffice/backofficeblogs")
             }
         } catch (error) {
             console.error("Fejl ved håndtering af blog:", error)
@@ -87,19 +82,19 @@ const BlogForm = ({ isEditMode }) => {
     return (
         <form onSubmit={handleSubmitBlog} className={styles.form}>
             <h2>{isEditMode ? "Opdater blog" : "Tilføj blog"}</h2>
+            <div className={styles.file}>
+                <label htmlFor="image">Vælg billede (valgfrit):</label>
+                {image && <img className={styles.previewImage} src={image} />} 
+                <input className={styles.backInput} id="image" type="file" onChange={handleImageChange} /> 
+            </div>
             <div>
-                {/* 
-                Når htmlFor-attributten på en <label> matcher id-attributten på et <input>-element, oprettes der en forbindelse mellem dem.
-                Dette betyder, at når brugeren klikker på etiketten, bliver det tilknyttede inputfelt automatisk aktiveret eller fokuseret. 
-                Dette gør både brugervenligheden og tilgængeligheden (accessibility) bedre
-                */}
-                <label htmlFor='name'>Navn:</label>
+                <label htmlFor='title'>Titel:</label>
                 <input
                     className={styles.backInput}
-                    id='name'
+                    id='title'
                     type='text'
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
                     required
                 />
             </div>
@@ -115,20 +110,15 @@ const BlogForm = ({ isEditMode }) => {
                 />
             </div>
             <div>
-                <label htmlFor='description'>Blog:</label>
+                <label htmlFor='description'>Beskrivelse:</label>
                 <input
-                    className={styles.backInput}
+                    className={`${styles.backInput} ${styles.lastInput}`}
                     id='description'
                     type='text'
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     required
                 />
-                <div className={styles.file}>
-                    <label htmlFor="image">Vælg billede (valgfrit):</label>
-                    {image && <img className={styles.previewImage} src={image} />} 
-                    <input className={styles.backInput} id="image" type="file" onChange={handleImageChange} /> 
-                </div>
             </div>
 
             <Button2

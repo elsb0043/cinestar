@@ -8,7 +8,7 @@
   
   h1 {
     font-size: 2rem;
-    font-family: 'Cormant', serif;
+    font-family: 'Cormorant', serif;
     font-weight: 300;
     text-transform: uppercase;
     margin-bottom: 3rem;
@@ -54,6 +54,36 @@
     max-width: 30rem;
     object-fit: cover;
   }
+}
+
+.confirmButton {
+  background-color: transparent;
+  border: 1px #267829 solid;
+  color: #267829;
+  padding: 1rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.confirmButton:hover {
+  background-color: #267829;
+  color: #fff;
+  transition: 0.4s ease-in-out;
+}
+
+.cancelButton {
+  background-color: transparent;
+  border: 1px rgb(174, 0, 0) solid;
+  color: rgb(174, 0, 0);
+  padding: 1rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.cancelButton:hover {
+  background-color: rgb(174, 0, 0);
+  color: #fff;
+  transition: 0.4s ease-in-out;
 }
 
 

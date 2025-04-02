@@ -55,10 +55,6 @@ const ReviewForm = ({ isEditMode }) => {
             } else {
                 response = await createReview(reviewData)
             }
-            console.log (
-                isEditMode ? "Udtalelse er opdateret" : "Udtalelse er oprettet", 
-                response
-            )
 
             if (response) {
                 await refetch()
@@ -100,24 +96,35 @@ const ReviewForm = ({ isEditMode }) => {
                 />
             </div>
             <div>
-            <label htmlFor='text'>Udtalelse:</label>
-            <input
-                className={styles.backInput}
-                id='text'
-                type='text'
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                required
-            />
-            <label htmlFor='rating'>Rating:</label>
-            <input
-                className={styles.backInput}
-                id='rating'
-                type='text'
-                value={rating}
-                onChange={(e) => setRating(e.target.value)}
-                required
-            />
+                <label htmlFor='text'>Udtalelse:</label>
+                <input
+                    className={styles.backInput}
+                    id='text'
+                    type='text'
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                    required
+                />
+            </div>
+            <div>
+                <label htmlFor='rating'>Rating (1-5):</label>
+                <input
+                    className={`${styles.backInput} ${styles.lastInput}`}
+                    id='rating'
+                    type='number'
+                    min="1"
+                    max="5"
+                    value={rating}
+                    onChange={(e) => {
+                        const value = parseInt(e.target.value, 10);
+                        if (!isNaN(value) && value >= 1 && value <= 5) {
+                            setRating(String(value));
+                        } else if (e.target.value === "") {
+                            setRating("");
+                        }
+                    }}
+                    required
+                />
             </div>
 
             <Button2

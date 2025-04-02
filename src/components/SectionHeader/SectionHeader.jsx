@@ -4,8 +4,10 @@ import styles from "./section.module.css"
 function SectionHeader({ title }) {
     return (
         <div className={styles.section}>
-            <h1>{title}</h1>
-            <Breadcrumbs title={title} />
+             <div className={styles.sectionContent}>
+                <h1>{title}</h1>
+                <Breadcrumbs />
+            </div>
         </div>
     )
 }

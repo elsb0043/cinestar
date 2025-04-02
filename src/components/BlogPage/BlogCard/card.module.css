@@ -4,7 +4,7 @@
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 5rem 2rem 5rem 2rem;
+    margin: 10rem 2rem 5rem 2rem;
 
     .blogCard {
         padding: 2rem;

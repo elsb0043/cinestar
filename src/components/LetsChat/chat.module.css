@@ -17,8 +17,8 @@
 
         h2 {
             font-size: 3rem;
-            font-family: 'Cormant', serif;
-            font-weight: 300;
+            font-family: 'Cormorant', serif;
+            font-weight: 600;
             text-transform: uppercase;
             text-align: center;
             letter-spacing: 0.2rem;
@@ -37,8 +37,8 @@
         .chatContentSoMe {
             h3 {
                 font-size: 2rem;
-                font-family: 'Cormant', serif;
-                font-weight: 300;
+                font-family: 'Cormorant', serif;
+                font-weight: 600;
                 text-transform: uppercase;
                 text-align: center;
                 letter-spacing: 0.2rem;

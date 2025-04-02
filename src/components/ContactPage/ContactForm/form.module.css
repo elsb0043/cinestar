@@ -4,7 +4,7 @@
     align-items: left;
     flex-direction: column;
     width: 100vw;
-    padding: 5rem 5rem 5rem 2rem;
+    padding: 5rem 5rem 10rem 2rem;
     
     .contactForm {
         display: flex;

@@ -1,0 +1,25 @@
+.buttonContainer {
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.button {
+    position: relative;
+    height: 6rem;
+    margin: 3rem;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: 0.2s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+  
+.bar {
+    position: absolute;
+    height: 0.4rem;
+    width: 3rem;
+    border: none;
+    border-radius: 5rem;
+    background-color: #d7652b;
+    cursor: pointer;
+}

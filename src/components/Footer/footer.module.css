@@ -43,8 +43,9 @@ footer::before {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: 0.1;
+    opacity: 0.08;
     z-index: 1;
+    object-fit: cover;
 }
 
 

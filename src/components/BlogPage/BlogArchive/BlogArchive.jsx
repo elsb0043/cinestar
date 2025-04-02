@@ -1,6 +1,5 @@
 import { useFetchBlogs } from '../../../hooks/useFetchBlogs'
 import BlogCard from '../BlogCard/BlogCard'
-import styles from './archive.module.css'
 
 function BlogArchive() {
     const { blogs } = useFetchBlogs()

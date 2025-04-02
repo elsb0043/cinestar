@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { GiHamburgerMenu } from "react-icons/gi"
 import { RxCross2 } from "react-icons/rx"
 import styles from './nav.module.css'
+import NavButton from './NavButton/NavButton'
 
 function Navigation() {
     const [isOpen, setIsOpen] = useState(false) // Styre, om menuen er åben eller lukket
@@ -22,7 +23,7 @@ function Navigation() {
         },
         { 
           path: "/faq", 
-          title: "FAQ" 
+          title: "Faq" 
         },
         { 
           path: "/kontakt", 
@@ -44,7 +45,7 @@ function Navigation() {
             <div className={styles.navList}>
               {/* Hamburger menu, der åbner og lukker navigationen */}
               <div className={styles.hamburger} onClick={toggleNav}>
-                {isOpen ? <RxCross2 size={30} /> : <GiHamburgerMenu size={25} />}
+                <NavButton isActive={isOpen} onToggle={toggleNav} />
               </div>
               
               {/* Links til navigationen, vises kun når menuen er åben */}

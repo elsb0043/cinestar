@@ -5,64 +5,71 @@
     align-items: left;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 5rem 2rem 5rem 2rem;
+    margin-top: 5rem;
+    position: relative;
 
-    .meetingInfo {
-        display: flex;
-        align-items: left;
-        flex-direction: column;
-        flex-wrap: wrap;
+    .meetingContent {
+        position: relative;
+        z-index: 2;
 
-        h3 {
-            color: #F07232;
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-    
-        h2 {
-            font-size: 3rem;
-            font-family: 'Cormant', serif;
-            font-weight: 300;
-            text-transform: uppercase;
-            margin-bottom: 3rem;
-            line-height: 1.4;
-            max-width: 80%;
-            letter-spacing: 0.2rem;
-        }
-    
-        h4 {
-            line-height: 2;
-            font-size: 1.8rem;
-            font-weight: 300;
-            line-height: 1.6;
-            max-width: 90%;
-        }
-    }
-
-    .meetingContact {
-        display: flex;
-        align-items: left;
-        flex-direction: column;
-        flex-wrap: wrap;
-        margin: 10rem 0 0 0;
-        gap: 3rem;
-
-        .meetingContactContent {
+        .meetingInfo {
             display: flex;
-            align-items: center;
-
-            .icons {
+            align-items: left;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin-left: 2rem;
+    
+            h3 {
                 color: #F07232;
-                font-size: 4rem;
-                margin-right: 2rem;
+                font-size: 1.8rem;
+                text-transform: uppercase;
+                font-weight: 600;
             }
-
-            .info {
-                margin-top: -1.5rem;
+        
+            h2 {
+                font-size: 3rem;
+                font-family: 'Cormorant', serif;
+                font-weight: 600;
+                text-transform: uppercase;
+                margin-bottom: 3rem;
+                line-height: 1.4;
+                max-width: 80%;
+                letter-spacing: 0.2rem;
+            }
+        
+            h4 {
+                line-height: 2;
+                font-size: 1.8rem;
+                font-weight: 300;
+                line-height: 1.6;
+                max-width: 90%;
             }
         }
-    } 
+    
+        .meetingContact {
+            display: flex;
+            align-items: left;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin: 10rem 0 0 2rem;
+            gap: 3rem;
+    
+            .meetingContactContent {
+                display: flex;
+                align-items: center;
+    
+                .icons {
+                    color: #F07232;
+                    font-size: 4rem;
+                    margin-right: 2rem;
+                }
+    
+                .info {
+                    margin-top: -1.5rem;
+                }
+            }
+        } 
+    }
 }
 
 /* Meeting form */
@@ -71,28 +78,13 @@
     align-items: left;
     flex-direction: column;
     width: 100vw;
-    padding: 5rem 0 5rem 0;
-
-    .closeButton {
-        color: #fff;
-        z-index: 1006;
-        cursor: pointer;
-        right: 0;
-        top: 0;
-        position: absolute;
-        margin: 2rem;
-    }
-    
-    .closeButton:hover {
-        color: #b9b9b9;
-        transition: ease-in-out 0.5s;
-    }    
     
     form {
         display: flex;
         align-items: left;
         flex-direction: column;
         gap: 2rem;
+        margin: 5rem 0 5rem 2rem;
 
         .name, .subject {
             padding: 1rem 0 1rem 1rem;
@@ -129,6 +121,21 @@
             color: #fff;
         }
     }
+}
+
+.meetingContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/assets/studie2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: 1;
 }
 
 

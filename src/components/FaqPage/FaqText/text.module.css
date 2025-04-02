@@ -1,24 +1,23 @@
 /* Mobile-first */
-.portfolio {
+.faqTextContainer {
     display: flex;
     align-items: left;
     flex-direction: column;
     flex-wrap: wrap;
-    background-color: #212121;
+    margin-top: 5rem;
 
-    .portfolioTitle {
+    .faqText {
         display: flex;
         align-items: left;
         flex-direction: column;
         flex-wrap: wrap;
-        padding: 5rem 2rem 0 2rem;
-
+        margin-left: 2rem;
+    
         h3 {
             color: #F07232;
             font-size: 1.8rem;
             text-transform: uppercase;
             font-weight: 600;
-            margin-top: 5rem;
         }
     
         h2 {
@@ -28,30 +27,15 @@
             text-transform: uppercase;
             margin-bottom: 3rem;
             line-height: 1.4;
-            max-width: 50%;
             letter-spacing: 0.2rem;
         }
-    }
-
-    .portfolioText {
-        display: flex;
-        align-items: left;
-        flex-direction: column;
-        flex-wrap: wrap;
-        margin-top: 4rem;
-        gap: 3rem;
-        padding: 0 2rem 5rem 2rem;
-        font-size: 1.8rem;
-
-        .lastP {
-            font-weight: 600;
-            margin-bottom: 5rem;
-        }
-    } 
-}
-
-
-/* Desktop */
-@media (min-width: 768px) {
     
+        h4 {
+            line-height: 2;
+            font-size: 1.8rem;
+            font-weight: 300;
+            line-height: 1.6;
+            max-width: 90%;
+        }
+    }
 }

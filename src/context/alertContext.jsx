@@ -48,8 +48,8 @@ export const AlertProvider = ({ children }) => {
       confirmButtonText: "Ja, fortsæt", // Tekst på bekræftelsesknappen
       cancelButtonText: "Annuller", // Tekst på annulleringsknappen
       customClass: {
-        confirmButton: "custom-confirm-button", // CSS-klasse til bekræftelsesknappen
-        cancelButton: "custom-cancel-button", // CSS-klasse til annulleringsknappen
+        confirmButton: "confirmButton", // CSS-klasse til bekræftelsesknappen
+        cancelButton: "cancelButton", // CSS-klasse til annulleringsknappen
       },
       buttonsStyling: false, // Deaktiverer standard styling på knapperne
     }).then((result) => {

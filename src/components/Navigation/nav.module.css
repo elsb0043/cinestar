@@ -62,27 +62,16 @@
     }
 }
 
+
 /* Desktop */
 @media (min-width: 768px) {
     .navBar {
-        height: 7rem;
-
-        .navLogo {
-            width: 8rem;
-            margin-left: 4rem;
-        }
-
         .navList {
             display: flex;
             justify-content: right;
             align-items: center; 
             flex-direction: row; 
             top: 0;
-            margin-right: 3rem;
-        }
-
-        .hamburger {
-            display: none;
         }
 
         .navLinks {

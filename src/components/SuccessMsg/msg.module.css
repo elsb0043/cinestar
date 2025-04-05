@@ -1,3 +1,4 @@
+/* Mobile-first */
 .successMsgContainer {
     height: 100vh;
     width: 100%;
@@ -32,4 +33,21 @@
     bottom: 0;
     background-color: #000; 
     z-index: 1;
+}
+
+
+/* Desktop */
+@media (min-width: 768px) {
+    .successMsgContainer {
+        top: 0;
+        left: 0;
+    
+        .successMsgContent {
+            margin-left: 25rem;
+    
+            p {
+                font-size: 1.8rem;
+            }
+        }
+    }
 }

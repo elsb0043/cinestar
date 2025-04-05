@@ -52,18 +52,6 @@ footer::before {
 /* Desktop */
 @media (min-width: 768px) {
     footer {
-        .footerContent {
-            .footerLogo {
-                width: 13rem;
-            }
-    
-            .footerContact {
-                .footerContactInfo {
-                    p {
-                        font-size: 2rem;
-                    }
-                }
-            }
-        }
+        height: 30vh;
     }
 }

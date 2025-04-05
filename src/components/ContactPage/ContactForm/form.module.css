@@ -12,16 +12,6 @@
         flex-direction: column;
         gap: 2rem;
 
-        .closeButton {
-            color: #fff;
-            z-index: 1006;
-            cursor: pointer;
-            right: 0;
-            top: 0;
-            position: absolute;
-            margin: 2rem;
-        }
-
         .name, .subject {
             padding: 1rem 0 1rem 1rem;
             width: 80vw;
@@ -63,13 +53,15 @@
 /* Desktop */
 @media (min-width: 768px) {
     .formContent {
-        form {
+        padding: 0 5rem 10rem 2rem;
+        
+        .contactForm {
             .name, .subject {
-                width: 40vw;
+                width: 50vw;
             }
-    
+
             textarea {
-                width: 40vw;
+                width: 50vw;
             }
         }
     }

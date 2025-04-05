@@ -1,3 +1,4 @@
+/* Mobile-first */
 .swiperSlide {
     height: 30%;
     width: 90%;
@@ -26,7 +27,8 @@
             text-transform: uppercase;
             font-weight: 600;
             font-family: 'Cormorant', serif;
-            margin-top: 4rem;
+            margin: 4rem 0 0.5rem 0;
+            letter-spacing: 0.2rem;
         }
     }
 }
@@ -34,4 +36,33 @@
 .swiper-slide-active {
     transform: scale(1.2);
     background: #222;
+}
+
+
+/* Desktop */
+@media (min-width: 768px) {
+    .swiperSlide {
+        width: 50%;
+
+        .slideContent {
+            height: 35rem;
+
+            .rating {
+                font-size: 2rem;
+            }
+    
+            .reviewText {
+                max-width: 75%;
+            }
+    
+            .reviewerName {
+                color: #F07232;
+                font-size: 2rem;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-family: 'Cormorant', serif;
+                margin-top: 8rem;
+            }
+        }
+    }
 }

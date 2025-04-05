@@ -9,3 +9,15 @@
         object-fit: cover;
     }
 }
+
+
+/* Desktop */
+@media (min-width: 768px) {
+    .swiperContainer {
+        height: 50rem;
+    
+        img {
+            height: 45rem;
+        }
+    }
+}

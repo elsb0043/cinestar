@@ -109,5 +109,41 @@
 
 /* Desktop */
 @media (min-width: 768px) {
-    
+    .servicesContainer {
+        .servicesContent {
+            .servicesTitle {
+                h3 {
+                    font-size: 2rem;
+                }
+            
+                h2 {
+                    font-size: 3.3rem;
+                }
+            }
+        
+            .servicesProvider {
+                .servicesProviderList {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    place-content: center;
+
+                    .servicesProviderInfo {
+                        justify-content: center;
+                        margin-left: 10rem;
+
+                        .text {
+                            h3 {
+                                font-size: 2rem;
+                            }
+            
+                            p {
+                                font-size: 1.8rem;
+                                max-width: 85%;
+                            }
+                        }
+                    }
+                }
+            } 
+        }
+    }
 }

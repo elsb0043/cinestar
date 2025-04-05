@@ -58,3 +58,14 @@
         }
     }
 }
+
+
+/* Desktop */
+@media (min-width: 768px) {
+    .faqsContainer {
+    
+        .faq {
+            width: 50%;
+        }
+    }
+}

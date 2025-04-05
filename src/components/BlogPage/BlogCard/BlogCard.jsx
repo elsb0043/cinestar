@@ -10,12 +10,14 @@ function BlogCard({ blog }) {
         <div key={blog._id} className={styles.blogPosts}>
             <div className={styles.blogCard}>
                 <img src={blog.image} alt={blog.title} />
-                <h3>{blog.title}</h3>
-                <p>{blog.teaser}</p>
-                {/* Link, som navigerer brugeren til den fulde blogpost-side, når der klikkes */}
-                <Link to={`/blog/${blog._id}`}>
-                    <Button text="Læs Mere" />
-                </Link>
+                <div className={styles.blogCardText}>
+                    <h3>{blog.title}</h3>
+                    <p>{blog.teaser}</p>
+                    {/* Link, som navigerer brugeren til den fulde blogpost-side, når der klikkes */}
+                    <Link to={`/blog/${blog._id}`}>
+                        <Button text="Læs Mere" />
+                    </Link>
+                </div>
             </div>
         </div>
     )

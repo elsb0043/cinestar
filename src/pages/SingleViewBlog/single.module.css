@@ -7,32 +7,55 @@
     flex-wrap: wrap;
     margin: 10rem 2rem 5rem 2rem;
 
-    .blogCard {
+    img {
+        height: auto;
+        width: 100%;
+    }
+
+    h3 {
+        color: #F07232;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        font-weight: 400;
+        padding: 5rem 0 0.5rem 0;
+        max-width: 70%;
+    }
+
+    .created {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 1.8rem;
+        font-weight: 300;
+        line-height: 1.6;
+        margin-bottom: 5rem;
+        max-width: 95%;
+    }
+}
+
+
+/* Desktop */
+@media (min-width: 768px) {
+    .singleViewContainer {
+        margin-left: 28%;
 
         img {
-            height: auto;
-            width: 100%;
+            max-width: 60%;
         }
 
         h3 {
-            color: #F07232;
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            font-weight: 400;
-            padding-top: 5rem;
-            max-width: 70%;
+            font-size: 2rem;
+            max-width: 50%;
         }
 
         .created {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
         }
 
         p {
-            font-size: 1.8rem;
-            font-weight: 300;
-            line-height: 1.6;
-            margin-bottom: 5rem;
-            max-width: 95%;
+            font-size: 2rem;
+            max-width: 55%;
         }
     }
 }

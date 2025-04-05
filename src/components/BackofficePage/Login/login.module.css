@@ -1,3 +1,4 @@
+/* Mobile-first */
 .loginContent {
     background-color: rgb(48, 47, 47);
     width: 100%;
@@ -16,6 +17,7 @@
         .failedLogin {
             color: red;
             font-size: 1.4rem;
+            margin-left: 1rem;
         }
 
         .loginInput {
@@ -32,6 +34,22 @@
             justify-content: center;
             align-content: center;
             margin-top: 3rem;
+        }
+    }
+}
+
+
+/* Desktop */
+@media (min-width: 768px) {
+    .loginContent {
+        .loginForm {
+            .failedLogin {
+                font-size: 1.6rem;
+            }
+    
+            .loginInput {
+                width: 40vw;
+            }
         }
     }
 }

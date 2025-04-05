@@ -30,7 +30,6 @@
         }
     
         h4 {
-            line-height: 2;
             font-size: 1.8rem;
             font-weight: 500;
             line-height: 1.6;
@@ -67,8 +66,29 @@
 /* Desktop */
 @media (min-width: 768px) {
     .text {
-        h2 {
-            font-size: 5rem;
+        padding: 5rem 5rem 10rem 2rem;
+    
+        .textInfo {
+            h3 {
+                font-size: 2rem;
+            }
+        
+            h2 {
+                font-size: 3.3rem;
+            }
+        
+            h4 {
+                font-size: 2rem;
+                max-width: 60%;
+            }
         }
+    
+        .textContact {
+            .textContactContent {
+                .info {
+                    margin-top: -1rem;
+                }
+            }
+        } 
     }
 }

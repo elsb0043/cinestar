@@ -51,5 +51,23 @@
 
 /* Desktop */
 @media (min-width: 768px) {
+    .reviewsContainer {
+        .reviewsContent {       
+            .reviewsContentText {
+                h3 {
+                    font-size: 2rem;
+                }
+            
+                h2 {
+                    font-size: 3.3rem;
+                    max-width: 50%;
+                }
     
+                p {
+                    font-size: 2rem;
+                    max-width: 65%;
+                }
+            }
+        }
+    }
 }

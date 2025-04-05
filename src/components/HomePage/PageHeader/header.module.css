@@ -55,5 +55,20 @@
 
 /* Desktop */
 @media (min-width: 768px) {
+    .header {
+        .headerContent {
+            h3 {
+                font-size: 2rem;
+            }
+        
+            h1 {
+                font-size: 5rem;
+            }
     
+            p {
+                max-width: 40%;
+                line-height: 1.8;
+            }
+        }
+    }
 }

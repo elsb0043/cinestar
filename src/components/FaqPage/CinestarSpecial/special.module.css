@@ -14,7 +14,6 @@
         margin: 2rem 0 0 2rem;
     
         h4 {
-            line-height: 2;
             font-size: 1.8rem;
             font-weight: 300;
             line-height: 1.6;
@@ -29,8 +28,8 @@
 
         .faqQuestion {
             position: relative;
-            font-size: 20px;
-            padding-right: 80px;
+            font-size: 2rem;
+            padding-right: 8rem;
             transition: all 0.4s ease;
             text-transform: uppercase;
             font-weight: 600;
@@ -40,10 +39,10 @@
             content: "+";
             position: absolute;
             top: 50%;
-            right: 0px;
+            right: 0;
             transform: translateY(-50%);
-            width: 30px;
-            height: 30px;
+            width: 3rem;
+            height: 3rem;
             transition: all 0.2s ease;
         }
 
@@ -57,10 +56,10 @@
     }
 
     .faq.open {
-        margin-bottom: 15px;
+        margin-bottom: 1rem;
 
         .faqQuestion {
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
         }
 
         .faqQuestion::after {
@@ -68,8 +67,25 @@
         }
 
         .faqAnswer {
-            max-height: 1000px;
+            max-height: 10rem;
             opacity: 1;
+        }
+    }
+}
+
+
+/* Desktop */
+@media (min-width: 768px) {
+    .firstFaqContainer {
+        .firstFaqText {
+            h4 {
+                font-size: 2rem;
+                max-width: 60%;
+            }
+        }
+    
+        .faq {
+            width: 50%;
         }
     }
 }

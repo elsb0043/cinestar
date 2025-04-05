@@ -74,5 +74,29 @@
 
 /* Desktop */
 @media (min-width: 768px) {
+    .historyContainer {
+        padding: 5rem 2rem 10rem 2rem;
     
+        .historyText {
+            h3 {
+                font-size: 2rem;
+            }
+        
+            h2 {
+                font-size: 3.3rem;
+            }
+    
+            h4 {
+                font-size: 2rem;
+                max-width: 60%;
+            }
+        }
+    
+        .historyCeo {
+            img {
+                height: 40rem;
+                width: 65rem;
+            }
+        }
+    }
 }

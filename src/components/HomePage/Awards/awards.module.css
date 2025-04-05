@@ -23,5 +23,15 @@
 
 /* Desktop */
 @media (min-width: 768px) {
+    .awards {
+        .awardsContent {
+            flex-direction: row;
+            gap: 1rem;
+            padding: 8rem;
     
+            img {
+                width: 33rem;
+            }
+        }
+    }
 }

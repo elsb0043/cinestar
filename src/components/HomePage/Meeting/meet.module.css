@@ -38,7 +38,6 @@
             }
         
             h4 {
-                line-height: 2;
                 font-size: 1.8rem;
                 font-weight: 300;
                 line-height: 1.6;
@@ -141,9 +140,48 @@
 
 /* Desktop */
 @media (min-width: 768px) {
-    .meeting {
-        h2 {
-            font-size: 5rem;
+    /* Meeting text */
+    .meetingContainer {
+        margin-top: 10rem;
+
+        .meetingContent {
+            .meetingInfo {
+                h3 {
+                    font-size: 2rem;
+                }
+            
+                h2 {
+                    font-size: 3.3rem;
+                }
+            
+                h4 {
+                    font-size: 2rem;
+                    max-width: 55%;
+                }
+            }
+        
+            .meetingContact {
+                .meetingContactContent {
+                    .info {
+                        margin-top: -1rem;
+                    }
+                }
+            } 
+        }
+    }
+
+    /* Meeting form */
+    .formContent {
+        form {
+            margin: 5rem 0 10rem 2rem;
+
+            .name, .subject {
+                width: 50vw;
+            }
+
+            textarea {
+                width: 50vw;
+            }
         }
     }
 }

@@ -1,11 +1,14 @@
+import { useState } from 'react'
+import { useBreakpoint } from '../../../hooks/useBreakpoints' // Importerer useBreakPoint custom hook - bruges til at tilpasse videoens skærmstørrelse
 import styles from './studio.module.css'
 import cinestar from '/assets/video/cinestar.mp4' // Importerer videofilen
 import coverImage from '/assets/video/cinestar-overlay.jpg' // Importerer billede, der bruges som forhåndsvisning af videoen
 import ReactPlayer from 'react-player' // Importerer ReactPlayer, som bruges til at afspille videoen
-import { useState } from 'react'
 
 function CinestarStudio() {
-    const [isPlaying, setIsPlaying] = useState(false) // State, der holder styr på om videoen afspilles eller ej
+    const [isPlaying, setIsPlaying] = useState(false) // State, der holder styr på om videoen afspilles eller ej 
+
+    const isDesktop = useBreakpoint()
 
     const togglePlay = () => setIsPlaying(prev => !prev) // Funktion til at toggle mellem at spille og stoppe videoen
 
@@ -20,10 +23,12 @@ function CinestarStudio() {
                 <div className={styles.videoWrapper}>
                     {/* ReactPlayer bruges til at vise og afspille videoen */}
                     <ReactPlayer 
+                        className='player'
                         url={cinestar} // URL'en til videofilen
                         controls={true}
-                        height={200}
-                        width={350}
+                        // Her tilpasses højden og bredden af ReactPlayer afhængigt af skærmstørrelsen
+                        height={isDesktop ? 400 : '100%'} // Hvis det er desktop (skærm ≥ 1024px), brug 500px højde – ellers 100% højde
+                        width={isDesktop ? 900 : '100%'}  // Hvis det er desktop, brug 650px bredde – ellers 100% bredde (tilpasser sig mobilskærm)
                         light={coverImage} // Bruger et billede som forhåndsvisning af videoen
                         playing={isPlaying} // Kontrollerer om videoen afspilles
                         playIcon={ 

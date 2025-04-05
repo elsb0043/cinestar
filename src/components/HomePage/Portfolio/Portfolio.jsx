@@ -1,5 +1,5 @@
 import styles from './portfolio.module.css'
-import Slider from './Swiper/Swiper'
+import PortfolioSwiper from './PortfolioSwiper/PortfolioSwiper'
 
 function Portfolio() {
 
@@ -9,7 +9,7 @@ function Portfolio() {
                 <h3>Portfolio</h3>
                 <h2>Udvalgte projekter</h2>
             </div>
-            <Slider />
+            <PortfolioSwiper /> {/* Importerer Portfolio slideren */}
             <div className={styles.portfolioText}>
                 <p>Her præsenterer vi et udvalg af de produktioner, vi er stolte af at have skabt.</p>
                 <p>Hvert projekt fortæller sin unikke historie og illustrerer vores ambition om at levere høj kvalitet, originalitet og visuel gennemslagskraft.</p>

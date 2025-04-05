@@ -32,6 +32,9 @@ export const AlertProvider = ({ children }) => {
       text: text, // Tekst der vises i alerten
       icon: "error", // Viser fejl-ikon
       confirmButtonText: "OK", // Tekst på bekræftelsesknappen
+      customClass: { // CSS-klasse til OK-knappen
+        confirmButton: "confirmButton",
+      },
       timer: 2000, // Alerten lukkes automatisk efter 2000ms (2 sekunder)
       timerProgressBar: true, // Viser en progress-bar, mens alerten er åben
     })
@@ -47,9 +50,9 @@ export const AlertProvider = ({ children }) => {
       showCancelButton: true, // Viser en "Annuller"-knap
       confirmButtonText: "Ja, fortsæt", // Tekst på bekræftelsesknappen
       cancelButtonText: "Annuller", // Tekst på annulleringsknappen
-      customClass: {
-        confirmButton: "confirmButton", // CSS-klasse til bekræftelsesknappen
-        cancelButton: "cancelButton", // CSS-klasse til annulleringsknappen
+      customClass: { // CSS-klasse til bekræftelsesknappen og annulleringsknappen
+        confirmButton: "confirmButton", 
+        cancelButton: "cancelButton",
       },
       buttonsStyling: false, // Deaktiverer standard styling på knapperne
     }).then((result) => {
@@ -65,9 +68,8 @@ export const AlertProvider = ({ children }) => {
 
   return (
     // RETURNERER EN CONTEXT PROVIDER
-    // `value` indeholder de funktioner, som bliver tilgængelige i andre komponenter via `useAlert`
     <AlertContext.Provider
-      value={{
+      value={{ // `value` indeholder de funktioner, som bliver tilgængelige i andre komponenter via `useAlert`
         showAlert,
         showSuccess,
         showError,

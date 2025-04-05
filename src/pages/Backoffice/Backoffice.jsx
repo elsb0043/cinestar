@@ -9,14 +9,10 @@ function Backoffice() {
             <h1>Velkommen til Backoffice</h1>
             <BackofficeNavigation />
 
-            <div className='backofficeContent'>
-                {/* 
-                    Outlet er en komponent fra react-router-dom, der bruges til at definere, 
-                    hvor de "nested routes" (indlejrede ruter) skal blive renderet i applikationen
-                */}
-                <Outlet />
+            <div className='backofficeContent'> 
+                <Outlet /> {/* Outlet er en komponent fra react-router-dom, der bruges til at definere, hvor de "nested routes" (indlejrede ruter) skal blive renderet i applikationen */}
             </div>
-            <Logout />
+            <Logout /> {/* Komponent der bruges til at logge ud af admin-delen */}
         </article>
     )
 }

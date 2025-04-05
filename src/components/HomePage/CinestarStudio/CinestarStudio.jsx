@@ -1,13 +1,13 @@
 import styles from './studio.module.css'
-import cinestar from '/assets/video/cinestar.mp4'
-import coverImage from '/assets/video/cinestar-overlay.jpg'
-import ReactPlayer from 'react-player'
+import cinestar from '/assets/video/cinestar.mp4' // Importerer videofilen
+import coverImage from '/assets/video/cinestar-overlay.jpg' // Importerer billede, der bruges som forhåndsvisning af videoen
+import ReactPlayer from 'react-player' // Importerer ReactPlayer, som bruges til at afspille videoen
 import { useState } from 'react'
 
 function CinestarStudio() {
-    const [isPlaying, setIsPlaying] = useState(false)
+    const [isPlaying, setIsPlaying] = useState(false) // State, der holder styr på om videoen afspilles eller ej
 
-    const togglePlay = () => setIsPlaying(prev => !prev);
+    const togglePlay = () => setIsPlaying(prev => !prev) // Funktion til at toggle mellem at spille og stoppe videoen
 
     return (
         <div className={styles.studioContainer}>
@@ -18,18 +18,18 @@ function CinestarStudio() {
             </div> 
             <div className={styles.studioFilm}>
                 <div className={styles.videoWrapper}>
+                    {/* ReactPlayer bruges til at vise og afspille videoen */}
                     <ReactPlayer 
-                        url={cinestar} 
+                        url={cinestar} // URL'en til videofilen
+                        controls={true}
                         height={200}
                         width={350}
-                        light={coverImage}
-                        playing={isPlaying}
-                        onClick={togglePlay}
+                        light={coverImage} // Bruger et billede som forhåndsvisning af videoen
+                        playing={isPlaying} // Kontrollerer om videoen afspilles
                         playIcon={ 
-                            <button className={styles.customPlayButton} onClick={togglePlay}>
-                                <div>
-                                    ▶
-                                </div>
+                            // Tilpasset play-knap, der aktiverer afspilning
+                            <button className={styles.customPlayButton} onClick={togglePlay} >
+                                <div>▶</div>
                             </button>
                         }
                     />

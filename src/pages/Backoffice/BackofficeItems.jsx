@@ -1,38 +1,37 @@
 import { Outlet, useNavigate } from "react-router-dom"
-import { useAlert } from "../../context/alertContext"
-import { useFetchBlogs } from "../../hooks/useFetchBlogs"
-import { useFetchReviews } from "../../hooks/useFetchReviews"
+import { useAlert } from "../../context/alertContext" // useAlert bruges til at vise advarsels- og bekræftelsesbeskeder
+import { useFetchBlogs } from "../../hooks/useFetchBlogs" // useFetchBlogs hook bruges til at hente og håndtere blogs
 import Button2 from "../../components/Button/Button2"
 
-// BLOGS
+// BackofficeBlogs komponent, der viser en liste af blogs i backoffice og giver mulighed for at tilføje, redigere og slette blogs
 const BackofficeBlogs = () => {
-  // Henter blogs og nødvendige funktioner fra useFetchBlogs hook
-  const { blogs, deleteBlog, refetch } = useFetchBlogs()
-  const { showError, showConfirmation } = useAlert()
-  const navigate = useNavigate()
+  const { blogs, deleteBlog, refetch } = useFetchBlogs() // Henter blogs, deleteBlog og refetch funktioner fra useFetchBlogs hook
+  const { showError, showConfirmation } = useAlert() // Henter showError og showConfirmation funktioner fra useAlert hook til at vise fejladvarsler og bekræftelsesdialoger
+  const navigate = useNavigate() // Henter navigate funktionen til at kunne navigere mellem forskellige ruter
 
-  // Funktion til at navigere til siden for at tilføje en blog
+  // Funktion der navigerer til siden for at tilføje en ny blog
   const handleAddBlog = () => {
-    navigate("/backoffice/backofficeblogs/add")
+    navigate("/backoffice/backofficeblogs/add") // Naviger til "Tilføj blog" ruten
   }
 
-  // Funktion til at navigere til siden for at redigere en blog
+  // Funktion der navigerer til siden for at redigere en eksisterende blog
   const handleEdit = (blogId) => {
-    navigate(`/backoffice/backofficeblogs/edit/${blogId}`)
+    navigate(`/backoffice/backofficeblogs/edit/${blogId}`) // Naviger til redigeringsruten for den specifikke blog
   }
 
-  // Funktion til at vise en bekræftelsesdialog ved sletning af en blog
+  // Funktion der håndterer sletning af en blog. Først viser en bekræftelsesdialog, og hvis brugeren bekræfter, slettes bloggen.
   const handleConfirmation = (blogId) => {
     showConfirmation(
-      "Du er ved at slette denne blog", // Bekræftelsestekst
-      "Er du sikker?", // Spørgsmål
-      () => deleteBlog(blogId), // Hvis bekræftet, slet bloggen
-      () => showError("Sletning annulleret.") // Hvis annulleret, vis fejlbesked
+      "Du er ved at slette denne blog", // Tekst, der informerer om sletning
+      "Er du sikker?", // Spørgsmål, som bekræftes af brugeren
+      () => deleteBlog(blogId), // Hvis brugeren bekræfter, kaldes deleteBlog for at slette bloggen
+      () => showError("Sletning annulleret.") // Hvis brugeren annullerer, vises en fejlbesked om annulleringen
     )
   }
 
   return (
     <article>
+      {/* Tabel der viser en liste af blogs med deres titel, billede, teaser og beskrivelse */}
       <table>
         <thead>
           <tr>
@@ -44,124 +43,47 @@ const BackofficeBlogs = () => {
           </tr>
         </thead>
         <tbody>
+          {/* Mapper over alle blogs og viser deres data i tabelrækker */}
           {blogs?.map((blog) => (
             <tr key={blog._id} className="backofficeItem">
-              <td>{blog.title}</td>
+              <td>{blog.title}</td> 
               <td>
-                <img src={blog.image} alt={blog.title} />
+                <img src={blog.image} alt={blog.title} /> 
               </td>
-              <td>{blog.teaser}</td>
-              <td>{blog.description}</td>
+              <td>{blog.teaser}</td> 
+              <td>{blog.description}</td> 
               <td className="buttons">
-                {/* Sletningsknap */}
+                {/* Button til at slette bloggen */}
                 <Button2
-                  buttonText="Slet"
+                  buttonText="Slet" 
                   background="red"
-                  onClick={() => handleConfirmation(blog._id)}
+                  onClick={() => handleConfirmation(blog._id)} // Når knappen klikkes, kaldes handleConfirmation for at vise sletningsdialogen
                 />
-                {/* Redigeringsknap */}
+                {/* Button til at redigere bloggen */}
                 <Button2
-                  buttonText="Rediger"
-                  onClick={() => handleEdit(blog._id)}
+                  buttonText="Rediger" 
+                  onClick={() => handleEdit(blog._id)} // Når knappen klikkes, navigeres brugeren til redigeringssiden for bloggen
                 />
               </td>
             </tr>
           ))}
+          {/* En ekstra række med en knap til at tilføje en ny blog */}
           <tr>
             <td>
-              {/* Tilføj blog-knap */}
+              {/* Button til at navigere til siden for at tilføje en ny blog */}
               <Button2
-                buttonText="Tilføj blog"
-                background="green"
-                onClick={handleAddBlog}
+                buttonText="Tilføj blog" // Tekst på knappen
+                background="green" // Baggrundsfarve på knappen
+                onClick={handleAddBlog} // Når knappen klikkes, navigeres brugeren til "Tilføj blog"-siden
               />
             </td>
           </tr>
         </tbody>
       </table>
-      {/* Outlet for at lade underkomponenter få adgang til refetch */}
+      {/* Outlet komponent bruges til at give adgang til refetch-funktionen til underkomponenter */}
       <Outlet context={{ refetch }} />
     </article>
   )
 }
 
-// REVIEWS
-const BackofficeReviews = () => {
-  // Henter udtalelser og nødvendige funktioner fra useFetchReviews hook
-  const { reviews, deleteReview, refetch } = useFetchReviews()
-  const { showError, showConfirmation } = useAlert()
-  const navigate = useNavigate()
-
-  // Funktion til at navigere til siden for at tilføje en udtalelse
-  const handleAddReview = () => {
-    navigate("/backoffice/reviews/add")
-  }
-
-  // Funktion til at navigere til siden for at redigere en udtalelse
-  const handleEdit = (reviewId) => {
-    navigate(`/backoffice/reviews/edit/${reviewId}`)
-  }
-
-  // Funktion til at vise en bekræftelsesdialog ved sletning af en udtalelse
-  const handleConfirmation = (reviewId) => {
-    showConfirmation(
-      "Du er ved at slette denne udtalelse", // Bekræftelsestekst
-      "Er du sikker?", // Spørgsmål
-      () => deleteReview(reviewId), // Hvis bekræftet, slet udtalelsen
-      () => showError("Sletning annulleret.") // Hvis annulleret, vis fejlbesked
-    )
-  }
-
-  return (
-    <article>
-      <table>
-        <thead>
-          <tr>
-            <th>Navn</th>
-            <th>Job</th>
-            <th>Udtalelse</th>
-            <th>Rating</th>
-            <th>Handling</th>
-          </tr>
-        </thead>
-        <tbody>
-          {reviews?.map((review) => (
-            <tr key={review._id} className='backofficeItem'>
-              <td>{review.name}</td>
-              <td>{review.position}</td>
-              <td>{review.text}</td>
-              <td>{review.rating}</td>
-              <td className='buttons'>
-                {/* Sletningsknap */}
-                <Button2
-                  buttonText="Slet"
-                  background="red"
-                  onClick={() => handleConfirmation(review._id)}
-                />
-                {/* Redigeringsknap */}
-                <Button2
-                  buttonText='Rediger'
-                  onClick={() => handleEdit(review._id)}
-                />
-              </td>
-            </tr>
-          ))}
-          <tr>
-            <td>
-              {/* Tilføj udtalelse-knap */}
-              <Button2
-                buttonText='Tilføj en udtalelse'
-                background='green'
-                onClick={() => handleAddReview()}
-              />
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      {/* Outlet for at lade underkomponenter få adgang til refetch */}
-      <Outlet context={{ refetch }} />
-    </article>
-  )
-}
-
-export { BackofficeBlogs, BackofficeReviews }
+export { BackofficeBlogs }

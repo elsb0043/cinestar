@@ -1,6 +1,6 @@
 import { useLocation, useRoutes } from "react-router-dom"
 import { useAuthContext } from "./context/useAuthContext"
-import { BackofficeBlogs, BackofficeReviews } from "./pages/Backoffice/BackofficeItems"
+import { BackofficeBlogs } from "./pages/Backoffice/BackofficeItems"
 /* CUSTOM PAGES */
 import Navigation from "./components/Navigation/Navigation"
 import HomePage from "./pages/HomePage"
@@ -13,18 +13,20 @@ import Footer from "./components/Footer/Footer"
 /* BACKOFFICE */
 import ProtectedRoute from "./components/ProtectedRoute"
 import Backoffice from "./pages/Backoffice/Backoffice"
-import ReviewForm from "./pages/Backoffice/Forms/ReviewForm"
 import BlogForm from "./pages/Backoffice/Forms/BlogForm"
 import Login from "./components/BackofficePage/Login/Login"
 
 function App() {
-  const { signedIn } = useAuthContext()
+  const { signedIn } = useAuthContext() // Henter 'signedIn' værdien fra useAuthContext hook, som indikerer om brugeren er logget ind
 
-  const location = useLocation()
+  const location = useLocation() // Bruges til at få den nuværende URL-bane (pathname) for at kontrollere, hvilken side brugeren er på
   
-  const isNav = ["/", "/blog", "/faq", "/kontakt"].includes(location.pathname)
-  const isFooter = ["/", "/blog", "/faq", "/kontakt"].includes(location.pathname)
-  const isLetsChat = ["/", "/blog", "/faq"].includes(location.pathname)
+  // Tjekker om den nuværende URL-bane er en af de specifikede, som er startside, blog, FAQ eller kontakt
+  // Hvis brugeren er på en af disse sider, bliver 'isNav, isFooter, isLetsChat' sat til 'true'
+  const isNav = ["/", "/blog", "/faq", "/kontakt"].includes(location.pathname) 
+  const isFooter = ["/", "/blog", "/faq", "/kontakt"].includes(location.pathname) 
+  const isLetsChat = ["/", "/blog", "/faq"].includes(location.pathname) 
+  
 
   // Definerer ruterne i appen
   const routes = useRoutes([
@@ -71,20 +73,6 @@ function App() {
             {
               path: "edit/:id",
               element: <BlogForm isEditMode={true} />,
-            },
-          ],
-        },
-        {
-          path: "reviews", 
-          element: <BackofficeReviews />,
-          children: [
-            {
-              path: "add",
-              element: <ReviewForm />,
-            },
-            {
-              path: "edit/:id", 
-              element: <ReviewForm isEditMode={true} />,
             },
           ],
         },

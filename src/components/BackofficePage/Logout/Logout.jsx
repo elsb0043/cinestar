@@ -1,5 +1,4 @@
 import { useAuthContext } from '../../../context/useAuthContext'
-import { useNavigate } from 'react-router-dom' // Importer useNavigate
 import Button from '../../Button/Button'
 import styles from './logout.module.css'
 

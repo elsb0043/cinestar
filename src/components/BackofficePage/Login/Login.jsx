@@ -4,8 +4,7 @@ import styles from './login.module.css'
 
 // Funktionel komponent til login
 function Login() {
-    // Henter nødvendige værdier og funktioner fra useAuth-hooket
-    const { setEmail, setPassword, error, signIn } = useAuth()
+    const { setEmail, setPassword, error, signIn } = useAuth() // Henter nødvendige værdier og funktioner fra useAuth-hooket
 
     return (
         <div className={styles.loginContent}>

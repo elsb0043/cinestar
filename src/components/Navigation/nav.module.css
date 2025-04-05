@@ -14,13 +14,6 @@
         width: 20rem;
     }
 
-    .hamburger {
-        position: relative;
-        z-index: 1002;
-        color: #F07232;
-        cursor: pointer;
-    }
-
     .navLinks {
         display: flex; 
         flex-direction: column;

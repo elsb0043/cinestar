@@ -6,7 +6,7 @@ function SectionHeader({ title }) {
         <div className={styles.section}>
              <div className={styles.sectionContent}>
                 <h1>{title}</h1>
-                <Breadcrumbs />
+                <Breadcrumbs /> {/* Importerer Breadcrumbs component */}
             </div>
         </div>
     )

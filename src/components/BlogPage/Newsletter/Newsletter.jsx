@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import styles from './news.module.css'
-import Button from '../../Button/Button'
 
 function Newsletter() {
     const [email, setEmail] = useState('') // State til at gemme den indtastede e-mail
@@ -27,12 +26,22 @@ function Newsletter() {
 
             // Hvis det lykkes, skal du opdatere tilstanden og vise succesmeddelelsen
             setIsSubmitted(true)
+
+            // Gem formulardata i localStorage
+            const newsLetterData = { ...email, date: new Date().toISOString() } // Tilføjer email til data
+            const newsLetterHistory = JSON.parse(localStorage.getItem("newsLetterHistory")) || [] // Henter eksisterende nyhedsbrevshistorik fra localStorage. Hvis der ikke er nogen, initialiseres det som en tom liste
+
+            // Opdaterer localStorage ved at tilføje det nye nyhedsbrev til historikken
+            // De gamle nyhedsbreve bliver bevaret, og det nye nyhedsbrev bliver tilføjet til slutningen af listen
+            localStorage.setItem("newsLetterHistory", JSON.stringify([...newsLetterHistory, newsLetterData]))
+            
         } catch (error) {
             // Hvis der var en fejl, skal du logge den på konsollen og vise en fejlmeddelelse
             console.error('Error subscribing:', error)
             setIsSubmitted(false) // Bliv på subscription, hvis det mislykkedes
         }
     }
+
 
     return (
         <div className={styles.newsletterContainer}>

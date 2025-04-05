@@ -5,7 +5,7 @@ const BackofficeNavigation = () => {
 
   return (
     <ul className={styles.backofficeNavigation}>
-      {/* Navigation tilbage til forsiden */}
+      {/* Navigation tilbage til forsiden, og log ud */}
       <li>
         <NavLink
           to="/"
@@ -20,15 +20,6 @@ const BackofficeNavigation = () => {
           to='/backoffice/backofficeblogs' // Link til blogsiden i backoffice
           className={({ isActive }) => (isActive ? styles.active : "")}>
           Blogs
-        </NavLink>
-      </li>
-      
-      {/* Navigation for Udtalelser */}
-      <li>
-        <NavLink
-          to='/backoffice/reviews' // Link til udtalelsersiden i backoffice
-          className={({ isActive }) => (isActive ? styles.active : "")}>
-          Udtalelser
         </NavLink>
       </li>
     </ul>

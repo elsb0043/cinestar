@@ -26,7 +26,7 @@ function Meeting() {
                         <p className={styles.info}>cinestar@production.dk</p>
                     </div>
                 </div>
-                <MeetForm />
+                <MeetForm /> {/* Importerer Meeting formularen */}
             </div>
         </div>
     )

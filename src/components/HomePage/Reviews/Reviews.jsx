@@ -1,5 +1,5 @@
 import styles from './reviews.module.css'
-import SwiperComp from './Swipe/Swiper'
+import ReviewsSwiper from './ReviewsSwiper/ReviewsSwiper'
 
 function Reviews() {
 
@@ -12,7 +12,7 @@ function Reviews() {
                     <p>“Cinestar er en fantastisk samarbejdspartner, der formår at kombinere kreativitet med professionalisme. Deres evne til at skabe unikke og engagerende produktioner er imponerende, og resultatet taler altid for sig selv.”</p>
                 </div>
             </div>
-            <SwiperComp />
+            <ReviewsSwiper /> {/* Importerer Reviews slideren */}
         </div>
     )
 }

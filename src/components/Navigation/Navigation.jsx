@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { GiHamburgerMenu } from "react-icons/gi"
-import { RxCross2 } from "react-icons/rx"
 import styles from './nav.module.css'
 import NavButton from './NavButton/NavButton'
 
@@ -9,7 +7,14 @@ function Navigation() {
     const [isOpen, setIsOpen] = useState(false) // Styre, om menuen er åben eller lukket
 
     const toggleNav = () => setIsOpen((prev) => !prev) // Skifter tilstanden for menuens åbning
-    const closeNav = () => setIsOpen(false) // Lukker menuen
+
+    // Funktion der lukker navigationen og scroller til toppen af siden
+    const closeNav = () => {
+        setIsOpen(false) // Lukker navigationen ved at sætte 'isOpen' til false
+        setTimeout(() => { // Starter en timer for at vente 100 millisekunder før handlingen
+            window.scrollTo(0, 0) // Scroller til toppen af siden (0, 0 betyder venstre top hjørne)
+        }, 100) // Vent i 100 millisekunder før scroll handlingen udføres
+    }
 
     // Navigation menu links og deres stier
     const Nav = [
@@ -43,15 +48,18 @@ function Navigation() {
             </Link>
 
             <div className={styles.navList}>
-              {/* Hamburger menu, der åbner og lukker navigationen */}
-              <div className={styles.hamburger} onClick={toggleNav}>
-                <NavButton isActive={isOpen} onToggle={toggleNav} />
-              </div>
+              {/* Burgermenu, der åbner og lukker navigationen */}
+              <NavButton isActive={isOpen} onToggle={toggleNav} />
               
               {/* Links til navigationen, vises kun når menuen er åben */}
               <div className={`${styles.navLinks} ${isOpen ? styles.open : ''}`}>
                 {Nav.map((item, index) => (
-                    <NavLink key={index} to={item.path} onClick={closeNav} className={({ isActive }) => (isActive ? styles.active : '')}>
+                    <NavLink 
+                      key={index} 
+                      to={item.path} 
+                      onClick={closeNav} 
+                      className={({ isActive }) => (isActive ? styles.active : '')}
+                      >
                         {item.title} {/* Titel på menuitem */}
                     </NavLink>
                 ))}

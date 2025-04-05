@@ -39,13 +39,13 @@
 }
 
 
-/* Desktop */
+/* Laptop */
 @media (min-width: 768px) {
     .swiperSlide {
-        width: 50%;
+        width: 70%;
 
         .slideContent {
-            height: 35rem;
+            height: 40rem;
 
             .rating {
                 font-size: 2rem;
@@ -63,6 +63,18 @@
                 font-family: 'Cormorant', serif;
                 margin-top: 8rem;
             }
+        }
+    }
+}
+
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .swiperSlide {
+        width: 50%;
+
+        .slideContent {
+            height: 35rem;
         }
     }
 }

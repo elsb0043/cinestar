@@ -50,6 +50,9 @@
             width: auto;
 
             .customPlayButton {
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -121,7 +124,7 @@
 }
 
 
-/* Desktop */
+/* Laptop */
 @media (min-width: 768px) {
     .studioContainer {
         padding: 5rem 2rem 10rem 2rem;
@@ -147,7 +150,7 @@
     
                 .customPlayButton {
                     top: 45%;
-                    left: 30%;
+                    left: 50%;
                     width: 10rem;
                     height: 10rem;
 
@@ -170,6 +173,21 @@
             .studioFilmInfo {
                 margin-top: 5rem;
                 gap: 7rem;
+            }
+        } 
+    }
+}
+
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .studioContainer {
+        .studioFilm {
+            .videoWrapper {
+                .customPlayButton {
+                    top: 45%;
+                    left: 31%;
+                }
             }
         } 
     }
